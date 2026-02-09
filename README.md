@@ -1,199 +1,188 @@
-Chemical Equipment Parameter Visualizer
+# Chemical Equipment Parameter Visualizer
+### (Hybrid Web + Desktop Application)
 
-(Hybrid Web + Desktop Application)
+---
 
-Project Overview
+## Project Overview
 
-This project is a hybrid Web + Desktop application developed as part of the FOSSEE IIT Bombay Internship Screening Task.
+This project is a hybrid **Web + Desktop application** developed as part of the  
+**FOSSEE IIT Bombay Internship Screening Task**.
 
-The application allows users to upload a CSV file containing chemical equipment parameters.
-A common Django REST backend processes the data, performs analytics using Pandas, and serves results to:
+The application allows users to upload a CSV file containing chemical equipment parameters.  
+A common **Django REST backend** processes the data, performs analytics using **Pandas**, and serves results to:
 
-A Web frontend built with React and Chart.js
+- A **Web frontend** built with **React** and **Chart.js**
+- A **Desktop application** built with **PyQt5** and **Matplotlib**
 
-A Desktop application built with PyQt5 and Matplotlib
+Both frontends consume the same backend APIs, demonstrating proper **full-stack** and **API-based architecture**.
 
-Both frontends consume the same backend APIs, demonstrating proper full-stack and API-based architecture.
+---
 
-Sample CSV Parameters
+## Sample CSV Parameters
 
 Each CSV file contains the following columns:
 
-Equipment Name
+- Equipment Name  
+- Equipment Type  
+- Flowrate  
+- Pressure  
+- Temperature  
 
-Equipment Type
+A sample CSV file (`sample_equipment_data.csv`) is included for testing.
 
-Flowrate
+---
 
-Pressure
+## Tech Stack
 
-Temperature
+### Backend
+- Python  
+- Django  
+- Django REST Framework  
+- Pandas  
+- SQLite  
 
-A sample CSV file (sample_equipment_data.csv) is included for testing.
+### Web Frontend
+- React.js  
+- Axios  
+- Chart.js  
+- react-chartjs-2  
 
-Tech Stack
-Backend
+### Desktop Frontend
+- PyQt5  
+- Matplotlib  
+- Requests  
 
-Python
+---
 
-Django
+## Features Implemented
 
-Django REST Framework
+### Backend
+- CSV upload API  
+- Data parsing and analytics using Pandas  
+- Summary statistics:
+  - Total equipment count  
+  - Average flowrate  
+  - Average pressure  
+  - Average temperature  
+- Upload history storage (last 5 uploads)  
+- Single backend shared by both frontends  
 
-Pandas
+### Web Application
+- CSV upload via browser  
+- Display of summary statistics  
+- Bar chart visualization of average parameters  
+- Clean and responsive UI  
 
-SQLite
+### Desktop Application
+- Native desktop window (PyQt5)  
+- CSV file upload using file dialog  
+- Display of summary statistics  
+- Matplotlib bar chart visualization  
 
-Web Frontend
+---
 
-React.js
+## Project Architecture
 
-Axios
-
-Chart.js
-
-react-chartjs-2
-
-Desktop Frontend
-
-PyQt5
-
-Matplotlib
-
-Requests
-
-Features Implemented
-Backend
-
-CSV upload API
-
-Data parsing and analytics using Pandas
-
-Summary statistics:
-
-Total equipment count
-
-Average flowrate
-
-Average pressure
-
-Average temperature
-
-Upload history storage (last 5 uploads)
-
-Single backend shared by both frontends
-
-Web Application
-
-CSV upload via browser
-
-Display of summary statistics
-
-Bar chart visualization of average parameters
-
-Clean and responsive UI
-
-Desktop Application
-
-Native desktop window (PyQt5)
-
-CSV file upload using file dialog
-
-Display of summary statistics
-
-Matplotlib bar chart visualization
-
-Project Architecture
 chemical-equipment-visualizer
 │
-├── backend/            Django REST backend
-├── web-frontend/       React web application
-├── desktop-frontend/   PyQt5 desktop application
+├── backend/ Django REST backend
+├── web-frontend/ React web application
+├── desktop-frontend/ PyQt5 desktop application
 └── README.md
-
 
 Both the web and desktop applications communicate with the same Django backend APIs.
 
-Setup Instructions
-Backend Setup (Django)
+---
 
-Navigate to the backend directory
+## Setup Instructions
+
+### Backend Setup (Django)
+
+#### - Navigate to the backend directory:
 cd backend
 
-Create and activate virtual environment
+#### - Create and activate virtual environment:
 python -m venv venv
 venv\Scripts\activate
 
-Install dependencies
+#### - Install dependencies:
 pip install -r requirements.txt
 
-Apply migrations
+#### - Apply migrations:
 python manage.py migrate
 
-Start the server
+#### - Start the server:
 python manage.py runserver
 
-Backend runs at:
+#### - Backend runs at:
 http://127.0.0.1:8000
 
-Web Frontend Setup (React)
+---
 
-Navigate to web frontend
+
+### Web Frontend Setup (React)
+
+#### - Navigate to web frontend:
 cd web-frontend
 
-Install dependencies
+#### - Install dependencies:
 npm install
 
-Start development server
+#### - Start development server:
 npm start
 
-Web app runs at:
+#### - Web app runs at:
 http://localhost:3000
 
-Desktop Application Setup (PyQt5)
+---
 
-Ensure Django backend is running
 
-Navigate to desktop frontend
+### Desktop Application Setup (PyQt5)
+
+Ensure Django backend is running.
+
+#### - Navigate to desktop frontend:
 cd desktop-frontend
 
-Install dependencies
+#### - Install dependencies:
 pip install pyqt5 matplotlib requests
 
-Run the application
+#### - Run the application:
 python app.py
 
 A desktop window will open allowing CSV upload and chart visualization.
 
-Demo Flow
+--- 
 
-Start the Django backend
 
-Run either the Web application or the Desktop application
+### Demo Flow
 
-Upload the provided sample CSV file
+1. Start the Django backend
+2. Run either the Web application or the Desktop application
+3. Upload the provided sample CSV file
+4. View summary statistics
+5. Observe data visualization chart
 
-View summary statistics
+---
 
-Observe data visualization chart
+### Screenshots
 
-Screenshots
+---
 
-(Add screenshots of the web app and desktop app here – optional but recommended)
 
-Notes for Evaluators
+### Notes for Evaluators
 
 A single backend is shared between both web and desktop applications
-
 APIs are reused without duplication of logic
-
 The project focuses on clarity, correctness, and adherence to the given task
-
 The implementation is intentionally clean and minimal to ensure stability and ease of understanding
 
-Author
+---
 
-Yogesh N
-Sri Sairam Engineering College
-Computer Science Engineering (AI/ML)
+
+## Author
+
+**Yogesh N**  
+Sri Sairam Engineering College  
+Computer Science Engineering (AI/ML)  
 FOSSEE Internship Applicant
