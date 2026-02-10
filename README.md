@@ -88,6 +88,8 @@ chemical-equipment-visualizer
 ├── backend/ Django REST backend
 ├── web-frontend/ React web application
 ├── desktop-frontend/ PyQt5 desktop application
+├── screenshots/ Screenshots of the output
+├── sample_equipment_data.csv
 └── README.md
 
 Both the web and desktop applications communicate with the same Django backend APIs.
@@ -166,6 +168,17 @@ A desktop window will open allowing CSV upload and chart visualization.
 ---
 
 ### Screenshots
+
+### Web Application – Summary & Visualization 
+![Web App](screenshots/web_app_summary.png)
+![Web App](screenshots/web_app_summary1.png)
+
+### Desktop Application – Native UI & Chart 
+![Desktop App](screenshots/desktop_app_chart.png) 
+
+### Backend API – Summary Response 
+![Backend API](screenshots/backend_api_response.png)
+
 
 ---
 
