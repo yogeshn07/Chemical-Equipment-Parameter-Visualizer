@@ -6,6 +6,7 @@ class EquipmentDataset(models.Model):
     avg_flowrate = models.FloatField()
     avg_pressure = models.FloatField()
     avg_temperature = models.FloatField()
+    equipment_type_distribution = models.JSONField()
 
     def __str__(self):
         return f"Dataset uploaded at {self.uploaded_at}"
