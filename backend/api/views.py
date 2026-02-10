@@ -63,6 +63,8 @@ def upload_csv(request):
 
 
 @api_view(['GET'])
+@permission_classes([AllowAny])
+@parser_classes([MultiPartParser, FormParser])
 def latest_summary(request):
     dataset = EquipmentDataset.objects.order_by('-uploaded_at').first()
 
@@ -81,6 +83,8 @@ def latest_summary(request):
 
 
 @api_view(['GET'])
+@permission_classes([AllowAny])
+@parser_classes([MultiPartParser, FormParser])
 def upload_history(request):
     datasets = EquipmentDataset.objects.order_by('-uploaded_at')[:5]
     serializer = EquipmentDatasetSerializer(datasets, many=True)
